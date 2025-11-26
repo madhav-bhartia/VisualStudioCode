@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int main(){
+    int size = 0;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    int nums[size];
+
+    for(int i = 0; i < size; i++){
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &nums[i]);
+    }
+    printf("normal array:\n");
+    for(int i = 0; i < size; i++){
+        printf("%d ", nums[i]);
+    }
+    int temp = 0;
+    for(int i = 0; i < size/2; i++){
+        int j = (size - 1) - i;
+        temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+    printf("\nreversed array:\n");
+    for(int i = 0; i < size; i++){
+        printf("%d ", nums[i]);
+    }
+}
